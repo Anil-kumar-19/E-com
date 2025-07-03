@@ -1,0 +1,53 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/main.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoppy</title>
+    
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+        .nav-bar{
+            display: flex;
+            width: 100vw;
+            height: 40px;
+            background-color: aqua;
+            align-items: center;
+        }
+        .nav-item{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+            font-size: 1.rem;
+            margin-right: 12px;
+        }
+        h1{
+            background-color: blueviolet;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>SHOPPY</h1>
+    <div class="nav-bar">
+        <!-- <a href="#">Home</a> -->
+        <ul class="nav-item">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Cart</a></li>
+            <li><a href="#">Wishlist</a></li>
+        </ul>
+    </div>
+</body>
+</html>
