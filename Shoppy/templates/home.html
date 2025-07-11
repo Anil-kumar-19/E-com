@@ -1,6 +1,6 @@
 {% extends 'main.html' %}
-{% block body_block %}
 {% load static %}
+{% block body_block %}
 <!-- carousel section -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -30,39 +30,18 @@
 </div>
 
 <!-- card section -->
-    <div class="card" style="width: 18rem;">
-  <img src="{% static 'image\sample4.jpg' %}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
-<div class="card" style="width: 18rem;">
-  <img src="{% static 'image\shoes.jpg' %}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
-<div class="card" style="width: 18rem;">
-  <img src="{% static 'image\watch.jpg' %}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
-<div class="card" style="width: 18rem;">
-  <img src="{% static 'image\apple-iphone-16e-1.jpg' %}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+ <div class="row">
+  {% for product in products %}
+    <div class="col-lg-4">
+            <img class="thumbnail" src="{{product.image.url}}">
+            <div class="box-element product">
+                <h6><strong>{{product.name}}</strong></h6>
+                <hr>
+                <button class="btn btn-outline-secondary add-btn">Add to cart</button>
+                <a class="btn btn-outline-success" href="#">View</a>
+                <h4 style="display: inline-block; float: right;">&#x20B9;{{product.price}}</h4>
+            </div>
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}
